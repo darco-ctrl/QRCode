@@ -1,0 +1,166 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72ag23b24ymg"]
+
+[ext_resource type="Script" uid="uid://bum4avl6gohqb" path="res://Scripts/main_window.gd" id="1_23hoq"]
+
+[node name="Main_Window" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23hoq")
+
+[node name="Background_color" type="ColorRect" parent="."]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="inputInterface" type="Control" parent="."]
+z_index = -4
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.065
+anchor_right = 0.5
+anchor_bottom = 0.935
+offset_left = -291.0
+offset_top = -0.120003
+offset_right = 291.0
+offset_bottom = 0.119934
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InterafaceColor" type="ColorRect" parent="inputInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.037
+anchor_right = 0.5
+anchor_bottom = 1.041
+offset_left = -291.0
+offset_top = -0.132
+offset_right = 291.0
+offset_bottom = -0.124023
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="StringInput" type="LineEdit" parent="inputInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.0660846
+anchor_right = 0.5
+anchor_bottom = 0.0660846
+offset_left = -273.0
+offset_top = -15.272
+offset_right = 273.0
+offset_bottom = 15.7283
+grow_horizontal = 2
+placeholder_text = "Your text here (URL, TEXTS, IMAGE URL, etc)"
+alignment = 1
+max_length = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="generateButton" type="Button" parent="inputInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.150178
+anchor_right = 0.5
+anchor_bottom = 0.159043
+offset_left = -55.0002
+offset_top = -15.7001
+offset_right = 55.0002
+offset_bottom = 10.2998
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Generate"
+metadata/_edit_use_anchors_ = true
+
+[node name="outPut" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0324074
+anchor_right = 0.229167
+anchor_bottom = 0.935185
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="outPut2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766493
+anchor_top = 0.0324074
+anchor_right = 0.986111
+anchor_bottom = 0.970679
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DrawingBoard" type="Control" parent="."]
+z_index = -3
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.607
+anchor_right = 0.5
+anchor_bottom = 0.607
+offset_left = -232.0
+offset_top = -233.336
+offset_right = 228.0
+offset_bottom = 226.664
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="DrawingBoard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Board" type="ColorRect" parent="DrawingBoard"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = 12.0
+offset_right = 219.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482639
+anchor_top = 0.0385802
+anchor_right = 0.517361
+anchor_bottom = 0.0740741
+grow_horizontal = 2
+text = "V.0.5"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_changed" from="inputInterface/StringInput" to="." method="_on_string_input_text_changed"]
+[connection signal="pressed" from="inputInterface/generateButton" to="." method="_on_generate_button_pressed"]
